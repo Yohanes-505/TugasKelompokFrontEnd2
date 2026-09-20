@@ -149,8 +149,7 @@
     </div>
   </section>
 
-  <!--kontak & pesan
-  Untuk saat ini hanya tampilan. Fungsi kirim/validasi form ditambahkan nanti dengan jQuery -->
+  <!--kontak & pesan (validasi form menggunakan jQuery, lihat script.js)-->
   <section class="kontak" id="kontak">
     <div class="kontak-grid">
       <div class="kontak-info">
@@ -179,7 +178,7 @@
         </div>
       </div>
 
-      <      <!--novalidate: validasi bawaan browser dimatikan, validasi dilakukan oleh jQuery di script.js-->
+      <!--novalidate: validasi bawaan browser dimatikan, validasi dilakukan oleh jQuery di script.js-->
       <form class="kontak-form" id="form-kontak" novalidate>
         <div class="form-group">
           <label for="nama">Nama</label>
@@ -206,15 +205,15 @@
   <!--footer-->
   <footer class="footer" id="footer">
     <p>&copy; 2026 Kopi Nusantara.</p>
-    <p>Jalan jalan dengan sepatu rodaku</p>
+    <p>Kedai kopi rumahan dengan cita rasa asli Nusantara.</p>
   </footer>
 
-    <!--tombol kembali ke atas, muncul lewat jQuery setelah halaman di-scroll-->
+  <!--tombol kembali ke atas, muncul lewat jQuery setelah halaman di-scroll-->
   <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!--ini buat menghubungkan jquery-->
+  <!--jQuery dari CDN resmi, wajib dimuat sebelum script.js agar $ sudah tersedia-->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="script.js"></script>
 
