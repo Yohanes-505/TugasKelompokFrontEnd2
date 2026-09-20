@@ -292,7 +292,7 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
   transition: background-color 0.3s ease;
 }
 
-/* kelas active ditambahkan jQuery saat pertanyaan diklik */
+/* untuk jquery */
 .faq-question.active {
   background-color: #f5e6d3;
 }
@@ -334,7 +334,7 @@ body:has(#kontak:target) .nav-list a[href="#kontak"] {
   background-color: #f5e6d3;
 }
 
-/* kelas liked ditambahkan jQuery saat tombol suka diklik */
+/* untuk jquery nanti */
 .btn-like.liked {
   background-color: #d9a066;
   color: #fff;
