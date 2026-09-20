@@ -28,6 +28,7 @@
           <li><a href="#hero">Beranda</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontak">Kontak</a></li>
         </ul>
       </nav>
@@ -37,6 +38,8 @@
   <!--hero-->
   <section class="hero" id="hero">
     <div class="hero-content">
+      <!--badge status buka ato tutup, teks dan warnanya diisi jQuery berdasarkan jam skrg-->
+      <span class="status-buka" id="status-buka"></span>
       <h2>Secangkir Kehangatan Nusantara</h2>
       <p>Kopi asli racikan rumahan, diseduh dengan cinta untuk menemani harimu.</p>
       <a href="#menu" class="btn">Lihat Menu</a>
@@ -50,31 +53,40 @@
     <div class="menu-grid">
 
       <div class="card">
+        <div class="badge-populer">Terpopuler</div>
         <img src="images/Kopi Hitam.png" alt="Kopi Hitam">
         <h3>Kopi Hitam</h3>
         <p>Kopi robusta lokal yang diseduh tubruk. Pahit pas dan aromanya kuat yang cocok untuk memulai hari.</p>
         <span class="price">Rp 12.000</span>
+        <!--Fitur Jquery untuk menyukai menu -->
+        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
       </div>
 
       <div class="card">
+        <div class="badge-populer">Terpopuler</div>
         <img src="images/Kopi Susu Gula Aren.png" alt="Kopi Susu Gula Aren">
         <h3>Kopi Susu Gula Aren</h3>
         <p>Espresso, susu segar, dan gula aren asli dalam satu gelas. Manisnya tidak berlebihan.</p>
         <span class="price">Rp 18.000</span>
+        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
       </div>
 
       <div class="card">
+        <div class="badge-populer">Terpopuler</div>
         <img src="images/Cappuccino.jpg" alt="Cappuccino">
         <h3>Cappuccino</h3>
         <p>Espresso dengan susu panas dan lapisan foam tebal. Hangat, creamy, dan seimbang di setiap tegukan.</p>
         <span class="price">Rp 20.000</span>
+        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
       </div>
 
       <div class="card">
+        <div class="badge-populer">Terpopuler</div>
         <img src="images/Iced Latte.jpg" alt="Latte">
         <h3>Latte</h3>
         <p>Espresso berpadu susu steam yang halus dengan foam tipis. Rasa kopinya ringan dan mudah dinikmati.</p>
         <span class="price">Rp 20.000</span>
+        <button class="btn-like"><i class="fa-solid fa-thumbs-up"></i> Suka (<span class="like-count">0</span>)</button>
       </div>
 
     </div>
@@ -91,7 +103,59 @@
     </div>
   </section>
 
-  <!--kontak & pesan (tampilan statis, belum ada proses pengiriman)-->
+  <!--faq-->
+  <section class="faq" id="faq">
+    <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+    <div class="faq-list">
+
+      <!--faq 1-->
+      <div class="faq-item">
+        <div class="faq-question">
+          Apakah Kopi Nusantara buka setiap hari?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Ya, kami buka setiap hari mulai pukul 08.00 sampai 21.00 WIB.</p>
+        </div>
+      </div>
+
+      <!--faq 2-->
+      <div class="faq-item">
+        <div class="faq-question">
+          Apakah bisa pesan lewat online?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Bisa, kamu bisa hubungi kami lewat Instagram atau WhatsApp yang tertera di bagian Kontak.</p>
+        </div>
+      </div>
+
+      <!--faq 3-->
+      <div class="faq-item">
+        <div class="faq-question">
+          Apakah tersedia menu tanpa gula?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Tersedia, kamu bisa request level gula sesuai selera saat memesan.</p>
+        </div>
+      </div>
+
+      <!--faq 4-->
+      <div class="faq-item">
+        <div class="faq-question">
+          Apakah ada fasilitas WiFi dan stopkontak?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Kami menyediakan WiFi gratis yang cepat dan banyak stopkontak, cocok untuk mengerjakan tugas atau work from cafe.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--kontak & pesan (validasi form menggunakan jQuery, lihat script.js)-->
   <section class="kontak" id="kontak">
     <div class="kontak-grid">
       <div class="kontak-info">
@@ -120,20 +184,26 @@
         </div>
       </div>
 
-      <form class="kontak-form" id="form-kontak">
+      <!--novalidate: validasi bawaan browser dimatikan, validasi dilakukan oleh jQuery di script.js-->
+      <form class="kontak-form" id="form-kontak" novalidate>
         <div class="form-group">
           <label for="nama">Nama</label>
           <input type="text" id="nama" name="nama" placeholder="Nama lengkap Anda">
+          <span class="error-msg"></span>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="nama@email.com">
+          <span class="error-msg"></span>
         </div>
         <div class="form-group">
           <label for="pesan">Pesan</label>
           <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan pesanan atau pertanyaan Anda"></textarea>
+          <span class="error-msg"></span>
         </div>
-        <button type="button" class="btn-kirim" id="btn-kirim">Kirim Pesan</button>
+        <button type="submit" class="btn-kirim" id="btn-kirim">Kirim Pesan</button>
+        <!--pesan sukses, disembunyikan dulu lalu dimunculkan jQuery dengan slideDown-->
+        <div class="form-status" id="form-status"></div>
       </form>
     </div>
   </section>
@@ -143,6 +213,18 @@
     <p>&copy; 2026 Kopi Nusantara.</p>
     <p>Kedai kopi rumahan dengan cita rasa asli Nusantara.</p>
   </footer>
+
+  <!--wadah toast notifikasi, isinya ditambahkan jQuery lewat fungsi tampilkanToast()-->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!--tombol kembali ke atas, muncul lewat jQuery setelah halaman di-scroll-->
+  <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!--jQuery dari CDN resmi, wajib dimuat sebelum script.js agar $ sudah tersedia-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
